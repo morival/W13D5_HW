@@ -9,11 +9,11 @@ class Library {
     this.books.push(newBook);
   }
   addBooks(newBooks) {
-    newBooks.forEach(book => this.books.push(book));
+    this.books = [...this.books, ...newBooks];
   }
   printInventory() {
-    this.books.forEach((book) => {
-      console.log(`${book.title} by ${book.author}`);
+    this.books.forEach(({title, author}) => {
+      console.log(`${title} by ${author}`);
     });
   }
 }
